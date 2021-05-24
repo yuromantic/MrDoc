@@ -1,4 +1,4 @@
-<h1 align="center">觅道文档 - 记录文档、汇聚思想</h1>
+<h1 align="center">炽娱Doc - 记录文档、汇聚思想</h1>
 
 <p align="center">个人和小型团队的云笔记、云文档、知识管理私有化部署方案</p>
 
@@ -149,7 +149,7 @@ python manage.py runserver
 
 ## 依赖
 
-觅道文档基于以下项目进行开发，在此表示感谢：
+炽娱Doc基于以下项目进行开发，在此表示感谢：
 
 - Python
 - Django

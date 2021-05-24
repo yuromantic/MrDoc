@@ -1070,7 +1070,7 @@ msgstr "拒絕訪問"
 #: .\template\app_doc\diff_doc.html:14
 #: .\template\app_doc\user\user_center.html:8 .\template\forget_pwd.html:6
 #: .\template\login.html:12 .\template\register.html:6
-msgid "觅道文档MrDoc"
+msgid "炽娱DocMrDoc"
 msgstr "覓道文檔MrDoc"
 
 #: .\template\403.html:20
@@ -2176,7 +2176,7 @@ msgstr "個結果"
 
 #: .\template\app_doc\search.html:25 .\template\app_doc\search_result.html:14
 #: .\template\search\search.html:14
-msgid "觅道搜索"
+msgid "炽娱搜索"
 msgstr "覓道搜索"
 
 #: .\template\app_doc\search_result.html:143 .\template\search\search.html:139
@@ -2212,7 +2212,7 @@ msgid "近1年"
 msgstr "近1年"
 
 #: .\template\app_doc\search_result.html:168 .\template\search\search.html:164
-msgid "觅道文档在"
+msgid "炽娱Doc在"
 msgstr "覓道文檔在"
 
 #: .\template\app_doc\search_result.html:170 .\template\search\search.html:166
@@ -2310,7 +2310,7 @@ msgstr "忘記密碼"
 
 #: .\template\forget_pwd.html:43 .\template\login.html:62
 #: .\template\register.html:56
-msgid "觅道文档"
+msgid "炽娱Doc"
 msgstr "覓道文檔"
 
 #: .\template\forget_pwd.html:50

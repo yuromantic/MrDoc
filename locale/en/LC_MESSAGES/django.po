@@ -1082,7 +1082,7 @@ msgstr "access denied"
 #: .\template\forget_pwd.html:43 .\template\login.html:12
 #: .\template\login.html:62 .\template\register.html:6
 #: .\template\register.html:56
-msgid "觅道文档"
+msgid "炽娱Doc"
 msgstr "Find a document"
 
 #: .\template\403.html:20
@@ -2191,7 +2191,7 @@ msgstr "Results"
 
 #: .\template\app_doc\search.html:25 .\template\app_doc\search_result.html:14
 #: .\template\search\search.html:14
-msgid "觅道搜索"
+msgid "炽娱搜索"
 msgstr "Searching for ways"
 
 #: .\template\app_doc\search_result.html:143 .\template\search\search.html:139
@@ -2227,7 +2227,7 @@ msgid "近1年"
 msgstr "Nearly one year"
 
 #: .\template\app_doc\search_result.html:168 .\template\search\search.html:164
-msgid "觅道文档在"
+msgid "炽娱Doc在"
 msgstr "Find the document in"
 
 #: .\template\app_doc\search_result.html:170 .\template\search\search.html:166
