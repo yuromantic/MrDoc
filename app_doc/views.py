@@ -304,6 +304,9 @@ def create_project(request):
         role = request.POST.get('role',0)
         role_list = ['0','1','2','3',0,1,2,3]
         if name != '':
+            # 不允许用户下同名文集存在
+            if Project.objects.filter(name=name,create_user=request.user).exists():
+                return JsonResponse({'status': False, 'data': _('同名文集已存在！')})
             project = Project.objects.create(
                 name=validateTitle(name),
                 icon = icon,
@@ -1006,6 +1009,9 @@ def create_doc(request):
                 check_project = Project.objects.filter(id=project,create_user=request.user)
                 colla_project = ProjectCollaborator.objects.filter(project=project,user=request.user)
                 if check_project.count() > 0 or colla_project.count() > 0:
+                    # 判断文集下是否存在同名文档
+                    if Doc.objects.filter(name=doc_name,top_doc=int(project)).exists():
+                        return JsonResponse({'status':False,'data':_('文集内不允许同名文档')})
                     # 开启事务
                     with transaction.atomic():
                         save_id = transaction.savepoint()
@@ -2025,9 +2031,11 @@ def report_md(request):
             md_file_filename = os.path.split(md_file_path)[-1] # 提取文件名
             md_file = "/media/reportmd_temp/"+ md_file_filename # 拼接相对链接
             return JsonResponse({'status':True,'data':md_file})
+        except ObjectDoesNotExist as e:
+            return JsonResponse({'status': False, 'data': _('文集不存在')})
         except Exception as e:
             logger.exception(_("导出文集MD文件出错"))
-            return JsonResponse({'status':False,'data':_('文集不存在')})
+            return JsonResponse({'status': False, 'data': _('导出文集异常')})
     elif types == 'multi':
         project_list = pro_id.split(',')
         for project in project_list:
@@ -2039,7 +2047,11 @@ def report_md(request):
             project_id_list = project_list,
             username = request.user.username
         )
-        md_file_path = project_md.work()  # 生成并获取MD文件压缩包绝对路径
+        try:
+            md_file_path = project_md.work()  # 生成并获取MD文件压缩包绝对路径
+        except:
+            logger.exception("文集导出异常")
+            return JsonResponse({'status': False, 'data': _('文集导出异常')})
         md_file_filename = os.path.split(md_file_path)[-1]  # 提取文件名
         md_file = "/media/reportmd_temp/" + md_file_filename  # 拼接相对链接
         return JsonResponse({'status': True, 'data': md_file})

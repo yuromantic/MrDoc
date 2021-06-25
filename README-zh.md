@@ -9,7 +9,7 @@
 
 
 <p align="center">
-<img src="https://img.shields.io/badge/MrDoc-v0.6.6-brightgreen.svg" title="Mrdoc" />
+<img src="https://img.shields.io/badge/MrDoc-v0.6.7-brightgreen.svg" title="Mrdoc" />
 <img src="https://img.shields.io/badge/Python-3.5+-blue.svg" title="Python" />
 <img src="https://img.shields.io/badge/Django-v2.2-important.svg" title="Django" />
 </p>
@@ -63,9 +63,9 @@
 </p>
 
 <p align="center">
-<img src="http://mrdoc.zmister.com/media//202010/2020-10-29_212410.png" height=300>
-<img src="http://mrdoc.zmister.com/media//202010/2020-10-29_212511.png" height=300>
-<img src="http://mrdoc.zmister.com/media//202010/2020-10-29_212543.png" height=300>
+<img src="http://mrdoc.zmister.com/media/202106/dashang_wxwebp_1622762424.jpg" height=200>
+<img src="http://mrdoc.zmister.com/media/202106/dashang_alipaywebp_1622762435.jpg" height=200>
+<img src="http://mrdoc.zmister.com/media/202106/dashang_qqwebp_1622762444.jpg" height=200>
 </p>
 
 

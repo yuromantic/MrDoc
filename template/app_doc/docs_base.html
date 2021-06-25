@@ -13,6 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="{% block keyword %}{% endblock %}{{site_keywords}}"/>
     <meta name="description" content="{% block description %}{% endblock %}" />
+    <!-- OGP分享协议开始 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block ogp_title %}{% endblock %}">
+    <meta property="og:description" content="{% block ogp_desc %}{% endblock %}">
+    <meta property="og:image" content="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static 'search/mrdoc_logo_300.png' %}">
+    <meta property="og:url" content="{{request.scheme}}://{{request.META.HTTP_HOST}}{{request.path_info}}">
+    <!-- OGP分享协议结束 -->
     <title>{% block title %}{% endblock %} - {% if site_name != None and site_name != '' %}{{site_name}} {% else %}{% trans "站点标题" %}{% endif %}</title>
     <link href="{% static 'layui/css/layui.css' %}?version={{mrdoc_version}}" rel="stylesheet">
     {% if doc.editor_mode != 4 %}
@@ -37,6 +44,11 @@
         {% if img_scale %}
         .markdown-body p img{
             max-width: 350px;
+        }
+        {% endif %}
+        {% if long_code == 'on' %}
+        pre.linenums,.vditor-reset > pre > code{
+            max-height: max-content!important;
         }
         {% endif %}
         /* html{
@@ -310,7 +322,7 @@
 </div>
 
 <script src="{% static 'jquery/3.1.1/jquery.min.js' %}"></script>
-<script src="{% static 'layui/layui.all.js' %}?version={{mrdoc_version}}"></script>
+<script src="{% static 'layui/layui.js' %}?version={{mrdoc_version}}"></script>
 <script src="{% static 'viewerjs/viewer.min.js' %}?version={{mrdoc_version}}"></script>
 <script src="{% static 'qrcodejs/qrcode.min.js' %}?version={{mrdoc_version}}"></script>
 <script src="{% static 'mrdoc/mrdoc-docs.js' %}?version={{mrdoc_version}}"></script>
@@ -376,14 +388,16 @@
         .forEach(function(link) {
             link.target = '_blank';
             // console.log(link,$(link).children('img').length)
-            console.log(link,$(link).children().length)
+            // console.log(link,$(link).children().length)
             if($(link).children().length == 0){
                 link.classList.add('external');
             }
         });
     });
     // 高亮搜索词
+    {% if doc.editor_mode != 2 %}
     keyLight('doc-content',getQueryVariable("highlight"))
+    {% endif %}
 </script>
 </body>
 </html>

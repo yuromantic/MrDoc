@@ -429,6 +429,16 @@ function initDocRender(mode){
                     title:false,
                 };
                 var img_viewer = new Viewer(document.getElementById('content'), img_options);
+                // 渲染文档目录
+                var toc_cnt = $(".markdown-toc-list").children().length;
+                // console.log(toc_cnt)
+                if(toc_cnt > 0){
+                    // console.log('显示文档目录')
+                    $(".tocMenu").show();
+                    initSidebar('.sidebar', '.doc-content');
+                };
+                // 高亮搜索词
+                keyLight('doc-content',getQueryVariable("highlight"));
             },
         })
     }else if(mode == 4){

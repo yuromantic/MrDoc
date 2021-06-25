@@ -166,6 +166,16 @@
     color: #333;
 }
 
+a.index-add-link{
+    color: #999;
+    float: right;
+    position: absolute;
+    right: 10px;
+}
+a.index-add-link:hover{
+    color: #333;
+}
+
 .layui-card{
     box-shadow:0 0 0 0;
 }
@@ -486,6 +496,9 @@ input#doc-name,input#doctemp-name{
     }
     /* layui单选样式 */
     .layui-form-radio>i:hover, .layui-form-radioed>i{
+        color: #2176ff;
+    }
+    .layui-form-radio:hover *, .layui-form-radioed, .layui-form-radioed>i{
         color: #2176ff;
     }
       /* 开关样式 */

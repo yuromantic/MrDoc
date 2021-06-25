@@ -207,7 +207,7 @@
         </div>
 
         <script src="{% static 'jquery/3.1.1/jquery.min.js' %}"></script>
-        <script src="{% static 'layui/layui.all.js' %}?version={{mrdoc_version}}"></script>
+        <script src="{% static 'layui/layui.js' %}?version={{mrdoc_version}}"></script>
         <script>
             var tree = layui.tree;
             var layer = layui.layer;
@@ -238,6 +238,7 @@
             <!-- 在线表格 -->
             <script src="{% static 'luckysheet/dist/plugins/js/plugin.js' %}?version={{mrdoc_version}}"></script>
             <script src="{% static 'luckysheet/dist/luckysheet.umd.js' %}?version={{mrdoc_version}}"></script>
+            <script src="{% static 'luckysheet/dist/luckyexcel.umd.js' %}?version={{mrdoc_version}}"></script>
             {% include 'app_doc/editor/tpl_editor_table.html' %}
         {% endif %}
         <script>
