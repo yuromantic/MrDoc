@@ -1242,7 +1242,7 @@ msgstr "添加"
 #: .\template\app_doc\doc.html:21 .\template\app_doc\project.html:18
 #: .\template\app_doc\tag_doc_single.html:21
 msgid "管理"
-msgstr "管理"
+msgstr "后台管理"
 
 #: .\template\app_doc\doc.html:77 .\template\app_doc\share\share_doc.html:190
 msgid "更新于:"
